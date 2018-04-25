@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import Phone from './assets/phone.svg';
 
@@ -88,13 +89,17 @@ const portraitToLandscape = keyframes`
 const Icon = styled(Phone)`
   display: block;
   tranform-origin: center;
-  animation: ${props =>
-    props.desiredOrientation === PORTRAIT
-      ? `${landscapeToPortrait} 1.5s linear infinite`
-      : `${portraitToLandscape} 1.5s linear infinite`};
   width: 18%;
   height: 18%;
   fill: #fff;
+`;
+
+const PortraitIcon = Icon.extend`
+  animation: ${landscapeToPortrait} 1.5s linear infinite;
+`;
+
+const LandscapeIcon = Icon.extend`
+  animation: ${portraitToLandscape} 1.5s linear infinite;
 `;
 
 const Tip = styled.p`
@@ -164,22 +169,23 @@ class NoRotation extends React.Component {
   }
 
   render() {
-    const {
-      children,
-      desiredOrientation,
-      adjustMethod,
-      onPortrait,
-      onLandscape,
-      ...otherProps
-    } = this.props;
+    const { children, desiredOrientation, className } = this.props;
     const { style, currentOrientation, showTip } = this.state;
     return (
-      <div data-orientation={currentOrientation} style={style} {...otherProps}>
+      <div
+        data-orientation={currentOrientation}
+        style={style}
+        className={className}
+      >
         {children}
 
         {showTip && (
           <Mask>
-            <Icon desiredOrientation={desiredOrientation} />
+            {desiredOrientation === PORTRAIT ? (
+              <PortraitIcon />
+            ) : (
+              <LandscapeIcon />
+            )}
             <Tip>旋转屏幕以获得最佳使用体验</Tip>
           </Mask>
         )}
@@ -187,5 +193,12 @@ class NoRotation extends React.Component {
     );
   }
 }
+
+NoRotation.propTypes = {
+  desiredOrientation: PropTypes.oneOf([PORTRAIT, LANDSCAPE]).isRequired,
+  adjustMethod: PropTypes.oneOf([AUTO, MANUAL]).isRequired,
+  onPortrait: PropTypes.func,
+  onLandscape: PropTypes.func,
+};
 
 export default NoRotation;
