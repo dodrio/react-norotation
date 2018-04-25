@@ -1,0 +1,78 @@
+{
+  "name": "react-norotation",
+  "version": "0.0.0",
+  "description": "Do not rotate your device, ok?",
+  "repository": "m31271n/react-norotation",
+  "main": "./dist/index.js",
+  "author": {
+    "name": "m31271n",
+    "email": "m31271n@gmail.com",
+    "url": "stack.m31271n.com"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "eslint 'src/**/*.{js,jsx}' 'test/**/*.js'",
+    "test": "ava",
+    "code-quality": "npm run lint && npm run test",
+    "build": "webpack",
+    "release":
+      "npm run code-quality && rm -rf dist && npm run build && npm publish"
+  },
+  "files": ["dist"],
+  "keywords": [""],
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-react": "^7.0.0-beta.46",
+    "ava": "*",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^8.0.0-beta",
+    "babel-plugin-styled-components": "^1.5.1",
+    "browser-env": "^3.2.5",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.12.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^3.2.6",
+    "svgr": "^1.9.1",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "babel": {
+    "plugins": ["transform-es2015-modules-commonjs"],
+    "presets": ["env", "react"]
+  },
+  "ava": {
+    "require": ["babel-register"],
+    "babel": "inherit"
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.{js,jsx}": ["prettier --write", "eslint", "git add"],
+      "**/*.json": ["prettier --write", "git add"]
+    }
+  },
+  "license": "MIT"
+}
