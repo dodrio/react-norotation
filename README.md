@@ -48,3 +48,7 @@ class App extends React.Component {
 | `adjustMethod`       | String   | Ajust method to use when current orientation is not equal to `desiredORientation`. Available value: "manual" / "auto". |
 | `onPortrait`         | Function | Callback executed when current orienttation switchs to portrait.                                                       |
 | `onLandscape`        | Function | Callback executed when current orienttation switchs to landscape.                                                      |
+
+## TODO
+
+* fix broken test
