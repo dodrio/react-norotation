@@ -2,6 +2,11 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
+  externals: {
+    'styled-components': {
+      commonjs2: 'styled-components',
+    },
+  },
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),

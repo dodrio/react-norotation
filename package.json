@@ -23,9 +23,7 @@
   },
   "files": ["dist"],
   "keywords": [""],
-  "dependencies": {
-    "prop-types": "^15.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.46",
@@ -50,6 +48,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "prettier": "^1.12.0",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "styled-components": "^3.2.6",
@@ -58,8 +57,9 @@
     "webpack-cli": "^2.0.15"
   },
   "peerDependencies": {
-    "react": ">=16",
-    "react-dom": ">=16"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^3.2.6"
   },
   "babel": {
     "presets": ["@babel/preset-env", "@babel/preset-react"],
