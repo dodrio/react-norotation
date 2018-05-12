@@ -3,6 +3,9 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   externals: {
+    react: {
+      commonjs2: 'react',
+    },
     'styled-components': {
       commonjs2: 'styled-components',
     },

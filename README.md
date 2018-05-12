@@ -4,7 +4,7 @@
 [![Dependency Status](https://img.shields.io/david/m31271n/react-norotation.svg)](#)
 [![DevDependency Status](https://img.shields.io/david/m31271n/react-norotation.svg)](#)
 [![Travis Build Status](https://img.shields.io/travis/m31271n/react-norotation.svg)](#)
-[![NPM Downloads](https://img.shields.io/npm/dm/m31271n/react-norotation.svg)](#)
+[![NPM Downloads](https://img.shields.io/npm/dm/@m31271n/react-norotation.svg)](#)
 
 > Do not rotate your device, ok?
 
