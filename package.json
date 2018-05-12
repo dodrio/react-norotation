@@ -1,6 +1,6 @@
 {
   "name": "@m31271n/react-norotation",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Do not rotate your device, ok?",
   "repository": "m31271n/react-norotation",
   "main": "./dist/index.js",
